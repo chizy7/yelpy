@@ -40,24 +40,21 @@ struct API {
                 print(error.localizedDescription)
             } else if let data = data {
                 
-        
-
                 // Get data from API and return it using completion
-                print(data)
-                
                 // 1. Convert json response to a dictionary
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 // 2. Grab the businesses data and convert it to an array of dictionaries for each restaurant
-                let restDictionaries = dataDictionary["businesses"] as! [[String: Any]]
+                let restDict = dataDictionary["businesses"] as! [[String: Any]]
                 
-                // Variable to store array of Restaurants
-                var restaurants: [Restaurant] = []
+                let restaurants = restDict.map({ Restaurant.init(dict: $0) })
                 
-                // Use each restaurant dictionary to initialize Restaurant object
-                for dictionary in restDictionaries {
-                    let restaurant = Restaurant.init(dict: dictionary)
-                    restaurants.append(restaurant) // add to restaurants array
-                }
+//                //Using for loop | Variable to store array of Restaurants
+//                var restaurants: [Restaurant] = []
+//                // Use each restaurant dictionary to initialize Restaurant object
+//                for dictionary in dataDictionarie {
+//                    let restaurant = Restaurant.init(dict: dictionary as! [String : Any])
+//                    restaurants.append(restaurant) // add to restaurants array
+//                }
                 
                 return completion(restaurants)
                 
