@@ -10,57 +10,101 @@ import UIKit
 import AlamofireImage
 
 class RestaurantsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    // ––––– TODO: Add storyboard Items (i.e. tableView + Cell + configurations for Cell + cell outlets)
-    // ––––– TODO: Next, place TableView outlet here
+    
     @IBOutlet weak var tableView: UITableView!
+    var restaurantsArray: [Restaurant] = [] // Initialize restaurantsArray
+    
+    // Search Bar Outlet + Variable for filtered Results
+    @IBOutlet weak var searchBar: UISearchBar!
+    var filteredRestaurants: [Restaurant] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Table view
         tableView.dataSource = self
         tableView.delegate = self
-        getAPIData()
+        
+        searchBar.delegate = self // Search Bar Delegate
+        
+        getAPIData() // To get data from API
     }
     
-    // ––––– TODO: Update API to get an array of restaurant objects
+    // Update API results to get an array of restaurant objects + restaurantArray variable + filteredRestaurants
     func getAPIData() {
         API.getRestaurants() { (restaurants) in
             guard let restaurants = restaurants else {
                 return
             }
-            print (restaurants)
             self.restaurantsArray = restaurants
+            self.filteredRestaurants = restaurants
             self.tableView.reloadData()
         }
     }
     
-    // –––––– TODO: Initialize restaurantsArray
-    var restaurantsArray: [Restaurant] = []
+}
     
-    // ––––– TODO: Add tableView datasource + delegate
+    // TableView Functionality
+    // Segue for passing restaurant to details view controller
+extension RestaurantsViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurantsArray.count
+        return filteredRestaurants.count
     }
-    
+    // Configure cell using MVC
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create Restaurant Cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell") as! RestaurantCell
         
-        let restaurant = restaurantsArray[indexPath.row]
-        
-        cell.r = restaurant
-        
+        // set cell's restaurant
+        cell.r = filteredRestaurants[indexPath.row]
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell) {
+            let r = filteredRestaurants[indexPath.row]
+            let detailViewController = segue.destination as! RestaurantDetailViewController
+            detailViewController.r = r
+        }
+    }
+        
+}
     
     
+    // Protocol + Functionality for Searching
+    // UISearchResultsUpdating informs the class of text changes happening in the UISearchBar
+extension RestaurantsViewController: UISearchBarDelegate {
+        
+    // Search bar functionality
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText != "" {
+            filteredRestaurants = restaurantsArray.filter { (r: Restaurant) -> Bool in
+                return r.name.lowercased().contains(searchText.lowercased())
+            }
+        }
+        else {
+            filteredRestaurants = restaurantsArray
+        }
+        tableView.reloadData()
+    }
     
-    // ––––– TODO: Get data from API helper and retrieve restaurants
+    // Show cancel button when typing
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
     
-
+    // Logic for searchBar cancel button
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false // remove cancel button
+        searchBar.text = "" // reset search text
+        searchBar.resignFirstResponder() // remove keyboard
+        filteredRestaurants = restaurantsArray // reset results to display
+        tableView.reloadData()
+    }
+    
 }
 
-// ––––– TODO: Create tableView Extension and TableView Functionality
 
 
