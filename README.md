@@ -14,10 +14,9 @@ Yelpy is an app that allows users to view Yelp restaurants. I am creating a netw
 
 ### App Walkthrough GIF
 
-![](https://i.imgur.com/I3UjE20.gif)
-
-![ezgif com-gif-maker-2](https://user-images.githubusercontent.com/32227554/153534387-4af50e26-f029-4b4d-8246-d9645b250a77.gif)
-
+<p float="left">
+<img src='https://user-images.githubusercontent.com/32227554/153534387-4af50e26-f029-4b4d-8246-d9645b250a77.gif' width=250 alt='Spring #1' />
+</p>
 
 
 ### Notes
