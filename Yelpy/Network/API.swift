@@ -13,7 +13,7 @@ struct API {
     
 
     
-    static func getRestaurants(completion: @escaping ([[String:Any]]?) -> Void) {
+    static func getRestaurants(completion: @escaping ([Restaurant]?) -> Void) {
         
         // ––––– TODO: Add your own API key!
         let apikey = "dVbmyeBFLZAeAoNoUkE-rKfhVa91E2l4GPh_v_bt1SY8_K9cQJflxGVII08l-2dvLVUxdIhygi-kpwYZzCSMphM5uIQtTqFH7ZmFOAB7KGuSILMsPbiZcaWlNmUAYnYx"
@@ -23,9 +23,8 @@ struct API {
         let long = -122.431297
         
         // Client ID
-        // 8o84C6Hu5Z_gDu_lZ2xNKg
+        // 
         
-        // API Key
         
         let url = URL(string: "https://api.yelp.com/v3/transactions/delivery/search?latitude=\(lat)&longitude=\(long)")!
         
@@ -49,9 +48,16 @@ struct API {
                 // 1. Convert json response to a dictionary
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 // 2. Grab the businesses data and convert it to an array of dictionaries for each restaurant
-                let restaurants = dataDictionary["businesses"] as! [[String: Any]]
+                let restDictionaries = dataDictionary["businesses"] as! [[String: Any]]
                 
+                // Variable to store array of Restaurants
+                var restaurants: [Restaurant] = []
                 
+                // Use each restaurant dictionary to initialize Restaurant object
+                for dictionary in restDictionaries {
+                    let restaurant = Restaurant.init(dict: dictionary)
+                    restaurants.append(restaurant) // add to restaurants array
+                }
                 
                 return completion(restaurants)
                 

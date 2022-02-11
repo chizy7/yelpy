@@ -30,11 +30,12 @@ class RestaurantsViewController: UIViewController, UITableViewDataSource, UITabl
             }
             print (restaurants)
             self.restaurantsArray = restaurants
+            self.tableView.reloadData()
         }
     }
     
     // –––––– TODO: Initialize restaurantsArray
-    var restaurantsArray: [[String:Any?]] = []
+    var restaurantsArray: [Restaurant] = []
     
     // ––––– TODO: Add tableView datasource + delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,18 +43,12 @@ class RestaurantsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Create Restaurant Cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell") as! RestaurantCell
         
         let restaurant = restaurantsArray[indexPath.row]
         
-        // Set name and phone of cell label
-        cell.nameLabel.text = restaurant["name"] as? String
-        
-        // Set Image of restaurant
-        if let imageUrlString = restaurant["image_url"] as? String {
-            let imageUrl = URL(string: imageUrlString)
-            cell.restaurantImage.af.setImage(withURL: imageUrl!)
-        }
+        cell.r = restaurant
         
         return cell
     }

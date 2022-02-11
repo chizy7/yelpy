@@ -29,23 +29,72 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="198"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wEZ-a1-NK4">
-                                                    <rect key="frame" x="219" y="11" width="175" height="176"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vK-h7-bjp">
-                                                    <rect key="frame" x="20" y="41" width="55" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vK-h7-bjp">
+                                                    <rect key="frame" x="16" y="16" width="202" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVc-Vk-fSi">
+                                                    <rect key="frame" x="16" y="56" width="202" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kks-BL-ebe">
+                                                    <rect key="frame" x="16" y="90" width="54" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="54" id="YHe-i1-lw2"/>
+                                                        <constraint firstAttribute="height" constant="16" id="wtZ-ca-wb3"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czn-cd-WqJ">
+                                                    <rect key="frame" x="86" y="89.5" width="53" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPO-Js-W08">
+                                                    <rect key="frame" x="16" y="122" width="202" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wEZ-a1-NK4">
+                                                    <rect key="frame" x="234" y="16" width="164" height="164"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="164" id="7lK-cK-tfM"/>
+                                                        <constraint firstAttribute="width" constant="164" id="BjD-2j-AKW"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wEZ-a1-NK4" firstAttribute="leading" secondItem="8vK-h7-bjp" secondAttribute="trailing" constant="16" id="2h3-61-jhh"/>
+                                                <constraint firstItem="Kks-BL-ebe" firstAttribute="leading" secondItem="WYD-q7-2rY" secondAttribute="leading" constant="16" id="2nU-wI-ZTA"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wEZ-a1-NK4" secondAttribute="bottom" constant="16" id="CS2-44-Rwr"/>
+                                                <constraint firstAttribute="trailing" secondItem="wEZ-a1-NK4" secondAttribute="trailing" constant="16" id="JQy-tI-Bbk"/>
+                                                <constraint firstItem="8vK-h7-bjp" firstAttribute="top" secondItem="WYD-q7-2rY" secondAttribute="top" constant="16" id="Jl0-1V-TXk"/>
+                                                <constraint firstItem="Czn-cd-WqJ" firstAttribute="centerY" secondItem="Kks-BL-ebe" secondAttribute="centerY" id="MWo-x4-FqZ"/>
+                                                <constraint firstItem="Kks-BL-ebe" firstAttribute="top" secondItem="HVc-Vk-fSi" secondAttribute="bottom" constant="16" id="NCP-ag-NmF"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IPO-Js-W08" secondAttribute="bottom" constant="16" id="Pcc-Fy-bfU"/>
+                                                <constraint firstItem="wEZ-a1-NK4" firstAttribute="leading" secondItem="HVc-Vk-fSi" secondAttribute="trailing" constant="16" id="U2p-na-WBJ"/>
+                                                <constraint firstItem="IPO-Js-W08" firstAttribute="leading" secondItem="WYD-q7-2rY" secondAttribute="leading" constant="16" id="fTo-0W-Gkp"/>
+                                                <constraint firstItem="8vK-h7-bjp" firstAttribute="leading" secondItem="WYD-q7-2rY" secondAttribute="leading" constant="16" id="jE7-3a-Ssh"/>
+                                                <constraint firstItem="Czn-cd-WqJ" firstAttribute="leading" secondItem="Kks-BL-ebe" secondAttribute="trailing" constant="16" id="kSu-fR-pdW"/>
+                                                <constraint firstItem="HVc-Vk-fSi" firstAttribute="leading" secondItem="WYD-q7-2rY" secondAttribute="leading" constant="16" id="nMR-bi-0YB"/>
+                                                <constraint firstItem="IPO-Js-W08" firstAttribute="top" secondItem="Kks-BL-ebe" secondAttribute="bottom" constant="16" id="noB-TO-nN8"/>
+                                                <constraint firstItem="wEZ-a1-NK4" firstAttribute="leading" secondItem="IPO-Js-W08" secondAttribute="trailing" constant="16" id="sAE-bV-Xus"/>
+                                                <constraint firstItem="HVc-Vk-fSi" firstAttribute="top" secondItem="8vK-h7-bjp" secondAttribute="bottom" constant="16" id="vCL-TJ-6Fa"/>
+                                                <constraint firstItem="wEZ-a1-NK4" firstAttribute="top" secondItem="WYD-q7-2rY" secondAttribute="top" constant="16" id="y2l-iS-bq9"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="label" destination="8vK-h7-bjp" id="g6y-Rg-kkM"/>
+                                            <outlet property="categoryLabel" destination="HVc-Vk-fSi" id="axJ-Qk-Wwf"/>
                                             <outlet property="nameLabel" destination="8vK-h7-bjp" id="axv-U9-TBi"/>
+                                            <outlet property="phoneLabel" destination="IPO-Js-W08" id="OR2-eq-9uf"/>
                                             <outlet property="restaurantImage" destination="wEZ-a1-NK4" id="JKW-8u-LlU"/>
+                                            <outlet property="reviewsLabel" destination="Czn-cd-WqJ" id="cM1-9s-gG0"/>
+                                            <outlet property="starsImage" destination="Kks-BL-ebe" id="R3U-k7-iiU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -17,6 +17,7 @@
 		BBEBF118247738A50044AFE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEBF116247738A50044AFE0 /* LaunchScreen.storyboard */; };
 		CFD902EB27B0954600FBDB18 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD902EA27B0954600FBDB18 /* RestaurantCell.swift */; };
 		CFD902EE27B0AC5A00FBDB18 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD902ED27B0AC5A00FBDB18 /* Restaurant.swift */; };
+		CFD902F227B0B87300FBDB18 /* YelpStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD902F127B0B87300FBDB18 /* YelpStars.swift */; };
 		DEB0D3CBF2C6E48DC3500274 /* Pods_Yelpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F45387EF0BCD4FD0EAD369F /* Pods_Yelpy.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		BBEBF119247738A50044AFE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD902EA27B0954600FBDB18 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		CFD902ED27B0AC5A00FBDB18 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		CFD902F127B0B87300FBDB18 /* YelpStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpStars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				BB47B3AC247739890029FFF6 /* Controllers */,
 				CFD902EC27B0AC1A00FBDB18 /* Models */,
 				BB47B3AB247739720029FFF6 /* Network */,
+				CFD902F027B0B84D00FBDB18 /* Extra */,
 				BB47B3AD247739F00029FFF6 /* Storyboards */,
 				BBEBF119247738A50044AFE0 /* Info.plist */,
 			);
@@ -141,6 +144,14 @@
 				CFD902ED27B0AC5A00FBDB18 /* Restaurant.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CFD902F027B0B84D00FBDB18 /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				CFD902F127B0B87300FBDB18 /* YelpStars.swift */,
+			);
+			path = Extra;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 				BB47B3AA247739640029FFF6 /* API.swift in Sources */,
 				BBEBF10C247738A50044AFE0 /* AppDelegate.swift in Sources */,
 				BBEBF10E247738A50044AFE0 /* SceneDelegate.swift in Sources */,
+				CFD902F227B0B87300FBDB18 /* YelpStars.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
