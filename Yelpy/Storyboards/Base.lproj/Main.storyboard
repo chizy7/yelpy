@@ -127,42 +127,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h3j-e8-QKX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h3j-e8-QKX">
                                 <rect key="frame" x="-4" y="88" width="422" height="259"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="259" id="5xM-LH-bp2"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvJ-jT-Utp">
-                                <rect key="frame" x="20" y="236" width="374" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRN-Qi-ziq">
-                                <rect key="frame" x="20" y="286" width="161" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE3-HZ-HVM">
-                                <rect key="frame" x="189" y="286" width="205" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Future: Add Map that takes you to MapViewController Similar to Yelp " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqU-oj-Obu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Future: Add Map that takes you to MapViewController Similar to Yelp " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqU-oj-Obu">
                                 <rect key="frame" x="6" y="386" width="388" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cdW-bL-HYN">
+                                <rect key="frame" x="12" y="225" width="382" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvJ-jT-Utp">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="SQb-pg-Max">
+                                <rect key="frame" x="6" y="299" width="411" height="41"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bRN-Qi-ziq">
+                                        <rect key="frame" x="0.0" y="0.0" width="149" height="41"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE3-HZ-HVM">
+                                        <rect key="frame" x="202" y="0.0" width="209" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="209" id="KRa-28-E6s"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="205" id="bNG-Oq-70d"/>
+                                            <constraint firstAttribute="height" constant="41" id="gVl-W2-tFX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b3B-Gy-pzl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="b3B-Gy-pzl" firstAttribute="bottom" secondItem="h3j-e8-QKX" secondAttribute="bottom" constant="32" id="Max-9Y-pqc"/>
-                            <constraint firstItem="h3j-e8-QKX" firstAttribute="leading" secondItem="qeR-0l-c7i" secondAttribute="leading" id="Vmk-mO-T4Q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SQb-pg-Max" secondAttribute="trailing" constant="-23" id="4dL-LH-qfg"/>
+                            <constraint firstItem="cdW-bL-HYN" firstAttribute="top" secondItem="b3B-Gy-pzl" secondAttribute="top" constant="137" id="EpF-5P-0Dz"/>
+                            <constraint firstItem="h3j-e8-QKX" firstAttribute="top" secondItem="b3B-Gy-pzl" secondAttribute="top" id="Ftr-9u-OAT"/>
+                            <constraint firstItem="h3j-e8-QKX" firstAttribute="centerX" secondItem="qeR-0l-c7i" secondAttribute="centerX" id="IKA-22-8gw"/>
+                            <constraint firstItem="DqU-oj-Obu" firstAttribute="trailing" secondItem="qeR-0l-c7i" secondAttribute="trailingMargin" id="Ncj-Ns-IC9"/>
+                            <constraint firstItem="cdW-bL-HYN" firstAttribute="leading" secondItem="b3B-Gy-pzl" secondAttribute="leading" constant="12" id="QeJ-uN-hCP"/>
+                            <constraint firstItem="DqU-oj-Obu" firstAttribute="top" secondItem="h3j-e8-QKX" secondAttribute="bottom" constant="39" id="Qun-Xb-16N"/>
+                            <constraint firstItem="DqU-oj-Obu" firstAttribute="top" secondItem="SQb-pg-Max" secondAttribute="bottom" constant="46" id="f9d-z8-Sp9"/>
+                            <constraint firstItem="SQb-pg-Max" firstAttribute="leading" secondItem="DqU-oj-Obu" secondAttribute="leading" id="hDZ-nK-YRI"/>
+                            <constraint firstItem="h3j-e8-QKX" firstAttribute="leading" secondItem="qeR-0l-c7i" secondAttribute="leadingMargin" constant="-24" id="mEL-9U-Rpb"/>
                             <constraint firstItem="h3j-e8-QKX" firstAttribute="top" secondItem="b3B-Gy-pzl" secondAttribute="top" id="n1X-BP-Vwo"/>
-                            <constraint firstAttribute="trailing" secondItem="h3j-e8-QKX" secondAttribute="trailing" id="yfQ-So-gWN"/>
+                            <constraint firstItem="b3B-Gy-pzl" firstAttribute="bottom" secondItem="DqU-oj-Obu" secondAttribute="bottom" constant="432" id="rJG-Wj-9xE"/>
+                            <constraint firstItem="cdW-bL-HYN" firstAttribute="trailing" secondItem="DqU-oj-Obu" secondAttribute="trailing" id="rQ0-mE-pCk"/>
+                            <constraint firstItem="DqU-oj-Obu" firstAttribute="leading" secondItem="b3B-Gy-pzl" secondAttribute="leading" constant="6" id="rh4-gJ-Yfy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sIl-QD-7aR"/>
