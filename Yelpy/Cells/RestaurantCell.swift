@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AlamofireImage
+import SkeletonView
 
 class RestaurantCell: UITableViewCell {
     

@@ -8,6 +8,8 @@
 
 import UIKit
 import AlamofireImage
+import Lottie
+import SkeletonView
 
 class RestaurantsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
